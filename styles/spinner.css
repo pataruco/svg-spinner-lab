@@ -1,88 +1,41 @@
-* {
-  box-sizing: border-box;
-}
-
-:root {
-  --base-color: rgb(125 125 125 / 50%);
-  --success-color: rgb(0 255 0);
-  --failure-color: rgb(255 0 0);
-  --base-space: 1.25rem;
-}
-
-img,
-iframe,
-svg {
-  display: block;
-  max-width: 100%;
-  height: auto;
-}
-
-body {
-  font-size: 100%;
-  font-family: sans-serif;
-}
-
-article {
-  max-width: 900px;
-  margin: 0 auto;
-}
-
-h1 {
-  text-align: center;
-}
-
-.svg-wrapper {
-  max-width: 50%;
-  margin: 0 auto;
-}
-
+/* Known bug on firefox where CSS calc functions 
+cannot be call on dasharray properties
+https://bugzilla.mozilla.org/show_bug.cgi?id=1258270 */
 svg circle {
-  fill: transparent;
+  fill: none;
   stroke: var(--base-color);
   stroke-width: 3;
+  /* Set the value of dasharray to be the length of the circumference */
+  /* 2 * π * Radius  = C */
+  /* 2 * 3.14 * 45  = 282.6 */
+  stroke-dasharray: 282.6;
+  /* Remove a percentage value from circumference */
+  /* C * 0.25 =  circle - 25% */
+  /* 282.6 * 0.25 =  70.65 */
+  stroke-dashoffset: 70.65;
+  transform-origin: center;
+  animation: spin 1s linear infinite;
 }
 
-menu {
-  padding: var(--base-space) 0;
-  margin: 0;
-  list-style: none;
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-  max-width: 450px;
+svg.success circle {
+  animation: success 1s linear forwards, spin 1s linear infinite;
 }
 
-button {
-  background-color: white;
-  border: 1px solid currentColor;
-  padding: 0.5rem 0.75rem;
-  transition: all 0.2s ease-in-out;
+svg .checkmark polyline {
+  stroke-width: 3;
+  stroke: black;
+  fill: none;
 }
 
-menu li:first-of-type button {
-  color: var(--success-color);
-  background-color: white;
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
 }
 
-menu li:first-of-type button:active {
-  color: white;
-  background-color: var(--success-color);
-}
-
-menu li:nth-of-type(2) button {
-  color: var(--failure-color);
-}
-
-menu li:nth-of-type(2) button:active {
-  color: white;
-  background-color: var(--failure-color);
-}
-
-menu li:last-of-type button {
-  color: var(--base-color);
-}
-
-menu li:last-of-type button:active {
-  color: white;
-  background-color: var(--base-color);
+@keyframes success {
+  to {
+    stroke-dashoffset: 0;
+    stroke: var(--success-color);
+  }
 }
