@@ -1,0 +1,73 @@
+/* Known bug on firefox where CSS calc functions 
+cannot be call on dasharray properties
+https://bugzilla.mozilla.org/show_bug.cgi?id=1258270 */
+svg circle {
+  fill: none;
+  stroke: var(--base-color);
+  stroke-width: 3;
+  /* Set the value of dasharray to be the length of the circumference */
+  /* 2 * π * Radius  = C */
+  /* 2 * 3.14 * 45  = 282.6 */
+  stroke-dasharray: 282.6;
+  /* Remove a percentage value from circumference */
+  /* C * 0.25 =  circle - 25% */
+  /* 282.6 * 0.25 =  70.65 */
+  stroke-dashoffset: 70.65;
+  transform-origin: center;
+  animation: spin 1s linear infinite;
+}
+
+svg.success circle {
+  animation: success 1s linear forwards, spin 1s linear infinite;
+}
+
+svg .checkmark polyline {
+  fill: none;
+  stroke-width: 3;
+  stroke: var(--success-color);
+  stroke-dasharray: 100;
+  stroke-dashoffset: 100;
+}
+
+svg.success .checkmark polyline {
+  animation: success 1s linear forwards 1s;
+}
+
+svg .cross line {
+  stroke-width: 3;
+  stroke: var(--failure-color);
+  stroke-dasharray: 100;
+  stroke-dashoffset: 100;
+}
+
+svg.failure circle {
+  animation: failure 1s linear forwards, spin 1s linear infinite;
+}
+
+svg.failure .cross line:first-of-type {
+  animation: failure 0.5s linear forwards 1s;
+}
+
+svg.failure .cross line:last-of-type {
+  animation: failure 0.5s linear forwards 1.5s;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes success {
+  to {
+    stroke-dashoffset: 0;
+    stroke: var(--success-color);
+  }
+}
+
+@keyframes failure {
+  to {
+    stroke-dashoffset: 0;
+    stroke: var(--failure-color);
+  }
+}

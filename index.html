@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles/index.css" />
+    <title>Spinner Lab ✅ ❌</title>
+  </head>
+  <body>
+    <article>
+      <h1>SVG Spinner Lab</h1>
+      <section class="spinner">
+        <div class="svg-wrapper">
+          <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <g>
+              <circle cx="50" cy="50" r="45" />
+            </g>
+            <g class="checkmark">
+              <polyline points="35 45, 45 55, 70 30" />
+            </g>
+            <g class="cross">
+              <line x1="30" y1="70" x2="70" y2="30" />
+              <line x1="30" y1="30" x2="70" y2="70" />
+            </g>
+          </svg>
+        </div>
+        <menu type="toolbar">
+          <li>
+            <button type="button">Success</button>
+          </li>
+          <li>
+            <button type="button">Failure</button>
+          </li>
+          <li>
+            <button type="button">Reset</button>
+          </li>
+        </menu>
+        <dialog>
+          <p>Animation ended! 💥</p>
+          <p>Now you might trigger another action</p>
+        </dialog>
+      </section>
+      <section>
+        <h2>Source code</h2>
+        <script src="https://gist.github.com/pataruco/a263d79ff2d9f6cfd7aff6dfb2770596.js"></script>
+      </section>
+    </article>
+    <script src="./scripts/main.js"></script>
+  </body>
+</html>
