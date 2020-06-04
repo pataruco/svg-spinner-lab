@@ -22,9 +22,15 @@ svg.success circle {
 }
 
 svg .checkmark polyline {
-  stroke-width: 3;
-  stroke: black;
   fill: none;
+  stroke-width: 3;
+  stroke: var(--success-color);
+  stroke-dasharray: 100;
+  stroke-dashoffset: 100;
+}
+
+svg.success .checkmark polyline {
+  animation: success 1s linear forwards 1s;
 }
 
 @keyframes spin {
