@@ -1,0 +1,88 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --base-color: rgb(125 125 125 / 50%);
+  --success-color: rgb(0 255 0);
+  --failure-color: rgb(255 0 0);
+  --base-space: 1.25rem;
+}
+
+img,
+iframe,
+svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+body {
+  font-size: 100%;
+  font-family: sans-serif;
+}
+
+article {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+h1 {
+  text-align: center;
+}
+
+.svg-wrapper {
+  max-width: 50%;
+  margin: 0 auto;
+}
+
+svg circle {
+  fill: transparent;
+  stroke: var(--base-color);
+  stroke-width: 3;
+}
+
+menu {
+  padding: var(--base-space) 0;
+  margin: 0;
+  list-style: none;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  max-width: 450px;
+}
+
+button {
+  background-color: white;
+  border: 1px solid currentColor;
+  padding: 0.5rem 0.75rem;
+  transition: all 0.2s ease-in-out;
+}
+
+menu li:first-of-type button {
+  color: var(--success-color);
+  background-color: white;
+}
+
+menu li:first-of-type button:active {
+  color: white;
+  background-color: var(--success-color);
+}
+
+menu li:nth-of-type(2) button {
+  color: var(--failure-color);
+}
+
+menu li:nth-of-type(2) button:active {
+  color: white;
+  background-color: var(--failure-color);
+}
+
+menu li:last-of-type button {
+  color: var(--base-color);
+}
+
+menu li:last-of-type button:active {
+  color: white;
+  background-color: var(--base-color);
+}
