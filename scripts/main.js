@@ -5,7 +5,7 @@ const resetButton = document.querySelector("menu li:last-of-type button");
 const svg = document.querySelector("svg");
 
 const setSvgTo = (className) => {
-  // hideDialog();
+  hideDialog();
   className
     ? svg.classList.toggle(className)
     : svg.classList.remove(...svg.classList);
@@ -28,7 +28,6 @@ const showDialog = (_event) => {
 };
 
 const hideDialog = (_event) => {
-  // TODO: Remove atribute
   [...dialogBox.attributes].forEach((attr) =>
     dialogBox.removeAttribute(attr.name)
   );
