@@ -24,6 +24,20 @@ svg {
   height: auto;
 }
 
+a {
+  text-decoration: none;
+  color: black;
+}
+
+a:hover {
+  border-bottom: 1px solid currentColor;
+}
+
+a:active {
+  color: gray;
+  border-bottom: 1px solid currentColor;
+}
+
 body {
   font-size: 100%;
   font-family: sans-serif;
@@ -86,4 +100,40 @@ menu li:last-of-type button {
 menu li:last-of-type button:active {
   color: white;
   background-color: var(--base-color);
+}
+
+.source-code {
+  margin-top: 130px;
+}
+
+footer {
+  background-color: black;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+}
+
+footer p span {
+  color: red;
+  padding: 0 0.25rem;
+  display: inline-block;
+  transition: transform 0.2s ease-in-out;
+}
+
+footer p span:hover {
+  transform: scale(2);
+}
+
+footer p a {
+  color: white;
+}
+
+footer p a:hover {
+  border-bottom: 1px solid white;
+}
+
+footer p a:active,
+footer p a:visited {
+  color: grey;
+  border-bottom: 1px solid currentColor;
 }
