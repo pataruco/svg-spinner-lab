@@ -10,7 +10,7 @@ Vanilla `HTML`, `CSS`, `JavaScript` 😎 sandbox to show how to animate SVG's us
 
 1. Clone this repo
    `git clone https://github.com/pataruco/svg-spinner-lab`
-2. Open HTMl file in the browser
+2. Open HTML file in the browser
    `open index.html`
 
 ## Preview

@@ -1,4 +1,4 @@
-name: Build and Deploy 🚀
+name: CI 🚀
 on:
   push:
     tags:
