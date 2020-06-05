@@ -16,3 +16,7 @@ Vanilla `HTML`, `CSS`, `JavaScript` 😎 sandbox to show how to animate SVG's us
 ## Preview
 
 You can see the lab live here [https://pataruco.github.io/svg-spinner-lab/](https://pataruco.github.io/svg-spinner-lab/)
+
+## Licence
+
+See the [LICENSE](./license.md) file for license rights and limitations (MIT).
