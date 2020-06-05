@@ -8,10 +8,12 @@ svg circle {
   /* Set the value of dasharray to be the length of the circumference */
   /* 2 * π * Radius  = C */
   /* 2 * 3.14 * 45  = 282.6 */
+  --stroke-dasharray: calc(2 * var(--svg-radius) * 3.14);
   stroke-dasharray: 282.6;
   /* Remove a percentage value from circumference */
   /* C * 0.25 =  circle - 25% */
   /* 282.6 * 0.25 =  70.65 */
+  --stroke-dashoffset: calc(var(--stroke-dasharray) * 0.25);
   stroke-dashoffset: 70.65;
   transform-origin: center;
   animation: spin 1s linear infinite;
