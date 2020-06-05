@@ -1,4 +1,4 @@
-![Build and Deploy 🚀](https://github.com/pataruco/svg-spinner-lab/workflows/Build%20and%20Deploy%20%F0%9F%9A%80/badge.svg)
+![CI 🚀](https://github.com/pataruco/svg-spinner-lab/workflows/CI%20%F0%9F%9A%80/badge.svg)
 
 # SVG animation lab
 
@@ -10,7 +10,7 @@ Vanilla `HTML`, `CSS`, `JavaScript` 😎 sandbox to show how to animate SVG's us
 
 1. Clone this repo
    `git clone https://github.com/pataruco/svg-spinner-lab`
-2. Open HTMl file in the browser
+2. Open HTML file in the browser
    `open index.html`
 
 ## Preview
